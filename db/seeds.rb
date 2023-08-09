@@ -14,14 +14,8 @@ episode3 = Episode.create(episode_number: 1, season: season2)
 episode4 = Episode.create(episode_number: 2, season: season2)
 
 
-purchase_option = PurchaseOption.create(purchase_price: 2.99, video_quality: 'HD')
-
-
-movie1.purchase_option = purchase_option
-movie1.save
-
-season1.purchase_option = purchase_option
-season1.save
+purchase_option = PurchaseOption.create(purchase_price: 2.99, video_quality: 'HD', purchaseable: movie1)
+purchase_option2 = PurchaseOption.create(purchase_price: 2.99, video_quality: 'HD', purchaseable: season1)
 
 
 Library.create(user: user, purchase_option: purchase_option)

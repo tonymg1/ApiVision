@@ -6,7 +6,7 @@ class SeasonsController < ApplicationController
   
     def show
       season = Season.find(params[:id])
-      render json: season
+      render json: season, include: [:episodes]
     end
   end
   

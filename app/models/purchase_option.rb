@@ -1,4 +1,3 @@
 class PurchaseOption < ApplicationRecord
-    belongs_to :purchasable, polymorphic: true
-    has_many :libraries
+    belongs_to :purchaseable, polymorphic: true
 end

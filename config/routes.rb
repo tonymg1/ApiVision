@@ -1,19 +1,13 @@
 Rails.application.routes.draw do
   resources :users, only: [] do
-    resources :libraries, only: [:show]
+    resources :libraries, only: [:index, :create]
   end
 
-  resources :movies, only: [:index, :show] do
-    member do
-      get 'purchase_options', to: 'movies/purchase_options#show'
-    end
-  end
+  resources :movies, only: [:index, :show] 
 
-  resources :seasons, only: [:index, :show] do
-    member do
-      get 'purchase_options', to: 'seasons/purchase_options#show'
-    end
-  end
+  resources :seasons, only: [:index, :show] 
 
-  resources :purchase_options, only: [:show]
+
+
+  resources :purchase_options, only: [:index, :create]
 end

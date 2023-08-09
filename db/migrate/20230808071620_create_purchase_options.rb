@@ -3,8 +3,7 @@ class CreatePurchaseOptions < ActiveRecord::Migration[7.0]
     create_table :purchase_options do |t|
       t.float :purchase_price, default: 2.99
       t.string :video_quality
-      t.string :status, default: "PENDING"
-      t.references :purchasable, polymorphic: true, null: false
+      t.references :purchaseable, polymorphic: true, null: false
 
       t.timestamps
     end

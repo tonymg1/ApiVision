@@ -41,12 +41,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_08_071741) do
     t.float "purchase_price", default: 2.99
     t.string "video_quality"
     t.string "status", default: "PENDING"
-    t.string "purchasable_type", null: false
-    t.integer "purchasable_id", null: false
+    t.string "purchaseable_type", null: false
+    t.integer "purchaseable_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["purchasable_type", "purchasable_id"], name: "index_purchase_options_on_purchasable"
-    t.index ["purchasable_type", "purchasable_id"], name: "index_purchase_options_on_purchasable_type_and_purchasable_id"
+    t.index "\"purchasable_type\", \"purchasable_id\"", name: "index_purchase_options_on_purchasable_type_and_purchasable_id"
+    t.index ["purchaseable_type", "purchaseable_id"], name: "index_purchase_options_on_purchaseable"
   end
 
   create_table "seasons", force: :cascade do |t|
