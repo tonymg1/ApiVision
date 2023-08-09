@@ -4,13 +4,16 @@ Rails.application.routes.draw do
   end
 
   resources :movies, only: [:index, :show] do
-    resources :purchase_options, only: [:create], controller: 'movies/purchase_options'
+    member do
+      get 'purchase_options', to: 'movies/purchase_options#show'
+    end
   end
 
   resources :seasons, only: [:index, :show] do
-    resources :purchase_options, only: [:create], controller: 'seasons/purchase_options'
+    member do
+      get 'purchase_options', to: 'seasons/purchase_options#show'
+    end
   end
 
   resources :purchase_options, only: [:show]
-
 end
