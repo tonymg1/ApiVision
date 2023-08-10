@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
-  resources :episodes
-  resources :seasons
-  resources :movies
-  resources :purchase_options
-  resources :libraries
-  resources :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :users, only: [] do
+    resources :libraries, only: [:index, :create]
+  end
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :movies, only: [:index, :show] 
+
+  resources :seasons, only: [:index, :show] 
+  
+  resources :purchase_options, only: [:index, :create]
 end
