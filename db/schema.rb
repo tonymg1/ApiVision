@@ -22,6 +22,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_08_071741) do
   create_table "libraries", force: :cascade do |t|
     t.integer "user_id"
     t.integer "purchase_option_id"
+    t.integer "remaining_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["purchase_option_id"], name: "index_libraries_on_purchase_option_id"
@@ -40,7 +41,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_08_071741) do
   create_table "purchase_options", force: :cascade do |t|
     t.float "purchase_price", default: 2.99
     t.string "video_quality"
-    t.string "status", default: "PENDING"
     t.string "purchaseable_type", null: false
     t.integer "purchaseable_id", null: false
     t.datetime "created_at", null: false

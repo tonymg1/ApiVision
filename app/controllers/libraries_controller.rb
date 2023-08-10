@@ -1,8 +1,7 @@
 class LibrariesController < ApplicationController
     def index
-      #añadir el order a library
-      library = user.library
-      render json: library, include: {purchase_option: {include: [:purchaseable]}}
+      library = user.library.order(remaining_time: :asc)
+      render json: library, include: { purchase_option: { include: [:purchaseable] } }
     end
 
     def create

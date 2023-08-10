@@ -1,4 +1,4 @@
 class User < ApplicationRecord
-    has_one :library
+    has_many :library
 end
   
